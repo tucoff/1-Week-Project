@@ -13,6 +13,8 @@ public class SC_TPSController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 60.0f;
 
+    public Animator animator;
+
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     Vector2 rotation = Vector2.zero;
@@ -28,19 +30,53 @@ public class SC_TPSController : MonoBehaviour
 
     void Update()
     {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+        
         if (characterController.isGrounded)
         {
             // We are grounded, so recalculate move direction based on axes
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
-            float curSpeedX = canMove ? speed * Input.GetAxis("Vertical") : 0;
-            float curSpeedY = canMove ? speed * Input.GetAxis("Horizontal") : 0;
+            float curSpeedX = canMove ? speed * vertical : 0;
+            float curSpeedY = canMove ? speed * horizontal : 0;
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+            moveDirection = new Vector3(horizontal, 0, vertical);
+
+            if(moveDirection == Vector3.zero)
+            {
+                animator.SetFloat("Speed", 0);
+                animator.Play("Idle");
+            }
+            else
+            {
+                animator.SetFloat("Speed", 1);
+                animator.Play("Walking");
+
+            }
 
             if (Input.GetButton("Jump") && canMove)
             {
                 moveDirection.y = jumpSpeed;
             }
+        }
+
+        if((horizontal < 0 && vertical < 0) && horizontal*-1 > vertical*-1)
+        {
+            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,0,0);
+        }
+        else if (1 == 1)
+        {
+            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,180,0);
+        }
+        else if (1 == 1)
+        {
+            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,90,0);
+        }
+        else if (1 == 1)
+        {
+            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,270,0);
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
