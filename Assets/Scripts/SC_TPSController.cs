@@ -42,8 +42,6 @@ public class SC_TPSController : MonoBehaviour
             float curSpeedY = canMove ? speed * horizontal : 0;
             moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
-            moveDirection = new Vector3(horizontal, 0, vertical);
-
             if(moveDirection == Vector3.zero)
             {
                 animator.SetFloat("Speed", 0);
@@ -59,24 +57,24 @@ public class SC_TPSController : MonoBehaviour
             if (Input.GetButton("Jump") && canMove)
             {
                 moveDirection.y = jumpSpeed;
+                animator.Play("Jump");
             }
         }
 
-        if((horizontal < 0 && vertical < 0) && horizontal*-1 > vertical*-1)
+        float h = 0;
+        float v = 0;
+        if (horizontal < 0) { h = horizontal*-1; } else { h = horizontal; }
+        if (vertical < 0) { v = vertical*-1; } else { v = vertical; }
+
+        if(v>=h)
         {
-            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,0,0);
+            if (vertical > 0){GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,0,0);}
+            else {GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,180,0);} 
         }
-        else if (1 == 1)
+        else if (v<h)
         {
-            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,180,0);
-        }
-        else if (1 == 1)
-        {
-            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,90,0);
-        }
-        else if (1 == 1)
-        {
-            GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,270,0);
+            if (horizontal >= 0){GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,90,0);}
+            else{GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,270,0);}
         }
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
