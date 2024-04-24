@@ -8,7 +8,7 @@ public class SC_Hold : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E) && !holding)
+        if (Input.GetKeyUp(KeyCode.E) && !holding && nearestDogInRange)
         {
                 transform.GetChild(0).GetChild(2).gameObject.SetActive(false);
                 transform.GetChild(0).GetChild(3).gameObject.SetActive(false);
@@ -20,7 +20,7 @@ public class SC_Hold : MonoBehaviour
                 holding = true;
                 dogInHand = nearestDogInRange.gameObject;
         }
-        else if (Input.GetKeyUp(KeyCode.E))
+        else if (Input.GetKeyUp(KeyCode.E) && dogInHand)
         {
                 transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
                 transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
