@@ -17564,6 +17564,8 @@ GameObject:
   - component: {fileID: 1448873996}
   - component: {fileID: 1448873995}
   - component: {fileID: 1448873997}
+  - component: {fileID: 1448873998}
+  - component: {fileID: 1448873999}
   m_Layer: 0
   m_Name: Samy
   m_TagString: Dog
@@ -17580,7 +17582,7 @@ Transform:
   m_GameObject: {fileID: 1448873993}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.952405, y: 0.63596535, z: -88.77}
+  m_LocalPosition: {x: -6.62, y: 0.63596535, z: -72.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17633,7 +17635,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &1448873997
 MonoBehaviour:
@@ -17647,6 +17649,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ce8a81fd6f1d7449dc201e10670ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1448873998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448873993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e2d8ad7c47b6245b731eca8814567c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1448873999
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448873993}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d6f507e6594baa6459ed026de71433cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1459986288
 GameObject:
   m_ObjectHideFlags: 0
@@ -24483,6 +24518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dogInHand: {fileID: 0}
   nearestDogInRange: {fileID: 0}
+  speed: 0
 --- !u!135 &2133888519
 SphereCollider:
   m_ObjectHideFlags: 0

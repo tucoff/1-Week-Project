@@ -5,6 +5,12 @@ public class SC_Hold : MonoBehaviour
     bool holding = false;
     public GameObject dogInHand = null;
     public GameObject nearestDogInRange = null;
+    public float speed = 0;
+
+    private void Start() 
+    {
+        speed = transform.GetComponent<SC_TPSController>().speed;    
+    }
 
     void Update()
     {
@@ -19,6 +25,7 @@ public class SC_Hold : MonoBehaviour
                 nearestDogInRange.GetComponent<Rigidbody>().detectCollisions = false;
                 holding = true;
                 dogInHand = nearestDogInRange.gameObject;
+                transform.GetComponent<SC_TPSController>().speed = speed*0.6f; 
         }
         else if (Input.GetKeyUp(KeyCode.E) && dogInHand)
         {
@@ -30,6 +37,7 @@ public class SC_Hold : MonoBehaviour
                 dogInHand.transform.parent = GameObject.Find("Dogs").transform;
                 holding = false;
                 dogInHand = null;
+                transform.GetComponent<SC_TPSController>().speed = speed;
         }
     }
 
@@ -53,5 +61,10 @@ public class SC_Hold : MonoBehaviour
         {
             nearestDogInRange = null;
         }
+    }
+
+    public bool isHolding()
+    {
+        return holding;
     }
 }

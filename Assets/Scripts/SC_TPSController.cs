@@ -12,9 +12,7 @@ public class SC_TPSController : MonoBehaviour
     public Transform playerCameraParent;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 60.0f;
-
     public Animator animator;
-
     CharacterController characterController;
     Vector3 moveDirection = Vector3.zero;
     Vector2 rotation = Vector2.zero;
@@ -26,6 +24,8 @@ public class SC_TPSController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
+        animator.SetFloat("MoveSpeed",1f);
+        speed = 7.5f;
     }
 
     void Update()
@@ -33,9 +33,20 @@ public class SC_TPSController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         
+
+        if (Input.GetKey(KeyCode.LeftShift) && !transform.GetComponent<SC_Hold>().isHolding())
+        {
+            animator.SetFloat("MoveSpeed",2f);
+            speed = 15f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            animator.SetFloat("MoveSpeed",1f);
+            speed = 7.5f;
+        }
+
         if (characterController.isGrounded)
         {
-            // We are grounded, so recalculate move direction based on axes
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
             float curSpeedX = canMove ? speed * vertical : 0;
@@ -77,15 +88,9 @@ public class SC_TPSController : MonoBehaviour
             else{GameObject.Find("Character").transform.localRotation = Quaternion.Euler(0,270,0);}
         }
 
-        // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
-        // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
-        // as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;
-
-        // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
 
-        // Player and Camera rotation
         if (canMove)
         {
             rotation.y += Input.GetAxis("Mouse X") * lookSpeed;
