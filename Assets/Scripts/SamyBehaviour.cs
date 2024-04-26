@@ -13,20 +13,24 @@ public class SamyBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 10;
+        speed = 12;
         currentDirection = 0;
+        StartCoroutine(SamyRNG());
     }
 
     void Update()
     {
-        rb.velocity = directions[currentDirection]*speed;
+        if(currentDirection <= 3)
+        {
+            rb.velocity = directions[currentDirection]*speed;
+        }
     }
 
     private void OnCollisionEnter(Collision col) 
     {
         if(col.gameObject.tag != "Floor")
         {
-            currentDirection += 1; 
+            currentDirection++; 
             switch(currentDirection)
             {
                 case 0: transform.localRotation = Quaternion.Euler(0f,-90f,0f); break;
@@ -35,6 +39,30 @@ public class SamyBehaviour : MonoBehaviour
                 case 3: transform.localRotation = Quaternion.Euler(0f,180f,0f); break;
                 default: currentDirection = 0; break;
             }
+            if(speed > -30f && speed < 30f)
+            {
+                speed += Random.Range(-5f,6f);
+            }
+            else if (speed >= 30f)
+            {
+                speed -= Random.Range(10f,16f);
+            }
+            else if (speed <= -30f)
+            {
+                speed += Random.Range(10f,16f);
+            }
+
+            if(col.gameObject.tag == "Player")
+            {
+                speed = 12f;
+            }
         }   
+    }
+
+    IEnumerator SamyRNG()
+    {
+        yield return new WaitForSeconds(Random.Range(1f,4f));
+        currentDirection++;
+        StartCoroutine(SamyRNG());        
     }
 }
