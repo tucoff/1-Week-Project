@@ -8289,6 +8289,7 @@ Transform:
   - {fileID: 1531537589}
   - {fileID: 2069989072}
   - {fileID: 392195580}
+  - {fileID: 1448873994}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806300894
@@ -12321,7 +12322,7 @@ GameObject:
   - component: {fileID: 1190450740}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14965,12 +14966,12 @@ Transform:
   m_GameObject: {fileID: 1448873993}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.74, y: 0.63596535, z: -67.44}
+  m_LocalPosition: {x: -8.792404, y: 9.25, z: 35.759995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1867838193}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 805189083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1448873995
 BoxCollider:
@@ -15018,7 +15019,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1448873997
 MonoBehaviour:
@@ -21064,7 +21065,6 @@ SceneRoots:
   - {fileID: 1190450743}
   - {fileID: 629353229}
   - {fileID: 2133888514}
-  - {fileID: 1448873994}
   - {fileID: 805189083}
   - {fileID: 1395127186}
   - {fileID: 969741245}

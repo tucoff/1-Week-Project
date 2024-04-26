@@ -35,6 +35,7 @@ public class SC_Hold : MonoBehaviour
                 dogInHand.GetComponent<Rigidbody>().isKinematic = false;
                 dogInHand.GetComponent<Rigidbody>().detectCollisions = true;
                 dogInHand.transform.parent = GameObject.Find("Dogs").transform;
+                dogInHand.transform.position -= Vector3.up*1.5f;
                 holding = false;
                 dogInHand = null;
                 transform.GetComponent<SC_TPSController>().speed = speed;

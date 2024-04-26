@@ -24,14 +24,17 @@ public class SamyBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision col) 
     {
-        currentDirection += 1; 
-        switch(currentDirection)
+        if(col.gameObject.tag != "Floor")
         {
-            case 0: transform.localRotation = Quaternion.Euler(0f,-90f,0f); break;
-            case 1: transform.localRotation = Quaternion.Euler(0f,0f,0f); break;
-            case 2: transform.localRotation = Quaternion.Euler(0f,90f,0f); break;
-            case 3: transform.localRotation = Quaternion.Euler(0f,180f,0f); break;
-            default: currentDirection = 0; break;
+            currentDirection += 1; 
+            switch(currentDirection)
+            {
+                case 0: transform.localRotation = Quaternion.Euler(0f,-90f,0f); break;
+                case 1: transform.localRotation = Quaternion.Euler(0f,0f,0f); break;
+                case 2: transform.localRotation = Quaternion.Euler(0f,90f,0f); break;
+                case 3: transform.localRotation = Quaternion.Euler(0f,180f,0f); break;
+                default: currentDirection = 0; break;
+            }
         }   
     }
 }
