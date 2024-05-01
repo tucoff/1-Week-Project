@@ -15,28 +15,50 @@ public class SamyBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         speed = 12;
         currentDirection = 0;
-        StartCoroutine(SamyRNG());
+        transform.localRotation = Quaternion.Euler(0f,45f,0f); 
     }
 
     void Update()
     {
-        if(currentDirection <= 3)
-        {
+        if((currentDirection <= 3 && !GameObject.FindWithTag("Player").GetComponent<SC_Hold>().isHolding()) 
+           || (currentDirection <= 3 && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().isHolding()
+           && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand
+           && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand != this.gameObject))
+        { 
             rb.velocity = directions[currentDirection]*speed;
         }
+
+        transform.localPosition = 
+        new Vector3(transform.localPosition.x,9.25f,transform.localPosition.z);
     }
 
     private void OnCollisionEnter(Collision col) 
     {
         if(col.gameObject.tag != "Floor")
         {
+            if(col.gameObject.tag == "Cerca Direita" && currentDirection == 0) 
+            {
+                currentDirection++;
+            }
+            
+            if(col.gameObject.tag == "Cerca Esquerda" && currentDirection == 2) 
+            {
+                currentDirection++;
+            } 
+
             currentDirection++; 
+
+            if (currentDirection > 3)
+            {
+                currentDirection = 0;
+            }
+
             switch(currentDirection)
             {
-                case 0: transform.localRotation = Quaternion.Euler(0f,-90f,0f); break;
-                case 1: transform.localRotation = Quaternion.Euler(0f,0f,0f); break;
-                case 2: transform.localRotation = Quaternion.Euler(0f,90f,0f); break;
-                case 3: transform.localRotation = Quaternion.Euler(0f,180f,0f); break;
+                case 0: transform.localRotation = Quaternion.Euler(0f,45f,0f); break;
+                case 1: transform.localRotation = Quaternion.Euler(0f,135f,0f); break;
+                case 2: transform.localRotation = Quaternion.Euler(0f,225f,0f); break;
+                case 3: transform.localRotation = Quaternion.Euler(0f,315f,0f); break;
                 default: currentDirection = 0; break;
             }
             if(speed > -30f && speed < 30f)
@@ -55,14 +77,7 @@ public class SamyBehaviour : MonoBehaviour
             if(col.gameObject.tag == "Player")
             {
                 speed = 12f;
-            }
+            } 
         }   
-    }
-
-    IEnumerator SamyRNG()
-    {
-        yield return new WaitForSeconds(Random.Range(1f,4f));
-        currentDirection++;
-        StartCoroutine(SamyRNG());        
     }
 }

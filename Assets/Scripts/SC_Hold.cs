@@ -23,9 +23,9 @@ public class SC_Hold : MonoBehaviour
                 nearestDogInRange.transform.position = transform.GetChild(0).GetChild(6).position;
                 nearestDogInRange.GetComponent<Rigidbody>().isKinematic = true;
                 nearestDogInRange.GetComponent<Rigidbody>().detectCollisions = false;
+                nearestDogInRange.transform.localRotation = Quaternion.Euler(0f,0f,0f);
                 holding = true;
                 dogInHand = nearestDogInRange.gameObject;
-                transform.GetComponent<SC_TPSController>().speed = speed*0.6f; 
         }
         else if (Input.GetKeyUp(KeyCode.E) && dogInHand)
         {
@@ -38,7 +38,11 @@ public class SC_Hold : MonoBehaviour
                 dogInHand.transform.position -= Vector3.up*1.5f;
                 holding = false;
                 dogInHand = null;
-                transform.GetComponent<SC_TPSController>().speed = speed;
+        }
+
+        if (dogInHand)
+        {
+            dogInHand.transform.localRotation = Quaternion.Euler(0f,0f,0f);
         }
     }
 

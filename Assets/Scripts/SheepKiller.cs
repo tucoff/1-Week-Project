@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SheepKiller : MonoBehaviour
 {
+    public TMP_Text text;
+
     private void OnCollisionEnter(Collision col) {
         if (col.gameObject.tag == "Sheep")
         {
+            GameObject.FindWithTag("Controller").GetComponent<SheepCounter>().sheeps++;
+            text.text = "Sheeps: " + GameObject.FindWithTag("Controller").GetComponent<SheepCounter>().sheeps;
+
             col.gameObject.GetComponent<SheepBehaviour>().enabled = false;
             col.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             col.gameObject.GetComponent<Rigidbody>().useGravity = false;

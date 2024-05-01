@@ -34,7 +34,7 @@ public class SC_TPSController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         
 
-        if (Input.GetKey(KeyCode.LeftShift) && !transform.GetComponent<SC_Hold>().isHolding())
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             animator.SetFloat("MoveSpeed",2f);
             speed = 15f;

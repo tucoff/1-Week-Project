@@ -8,6 +8,10 @@ TagManager:
   - Sheep
   - Dead
   - Floor
+  - Cerca Direita
+  - Cerca Esquerda
+  - Controller
+  - Canvas
   layers:
   - Default
   - TransparentFX

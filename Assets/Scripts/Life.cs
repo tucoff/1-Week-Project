@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class Life : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class Life : MonoBehaviour
     private void FixedUpdate() {
         if (life <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+           UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
     }
 }
