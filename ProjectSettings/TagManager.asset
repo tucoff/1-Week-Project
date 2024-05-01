@@ -12,6 +12,7 @@ TagManager:
   - Cerca Esquerda
   - Controller
   - Canvas
+  - Dogs
   layers:
   - Default
   - TransparentFX

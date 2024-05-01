@@ -1561,6 +1561,7 @@ GameObject:
   - component: {fileID: 144015263}
   - component: {fileID: 144015265}
   - component: {fileID: 144015264}
+  - component: {fileID: 144015266}
   m_Layer: 0
   m_Name: Serena
   m_TagString: Dog
@@ -1632,6 +1633,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &144015266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144015262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad34468f56374524e86d784d6e1ede6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &147121378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8793,7 +8806,7 @@ GameObject:
   - component: {fileID: 805189083}
   m_Layer: 0
   m_Name: Dogs
-  m_TagString: Untagged
+  m_TagString: Dogs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

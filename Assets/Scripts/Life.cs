@@ -18,6 +18,8 @@ public class Life : MonoBehaviour
     }
 
     private void FixedUpdate() {
+        text.text = "Life: " + life;
+        
         if (life <= 0)
         {
            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");

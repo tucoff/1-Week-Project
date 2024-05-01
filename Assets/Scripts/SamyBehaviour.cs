@@ -26,10 +26,17 @@ public class SamyBehaviour : MonoBehaviour
            && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand != this.gameObject))
         { 
             rb.velocity = directions[currentDirection]*speed;
-        }
-
+        } 
+        
         transform.localPosition = 
-        new Vector3(transform.localPosition.x,9.25f,transform.localPosition.z);
+            new Vector3(transform.localPosition.x,9.25f,transform.localPosition.z);
+
+        if(GameObject.FindWithTag("Player").GetComponent<SC_Hold>().isHolding()
+           && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand
+           && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand == this.gameObject)
+        {    
+           transform.localPosition = Vector3.zero;
+        }
     }
 
     private void OnCollisionEnter(Collision col) 

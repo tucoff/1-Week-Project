@@ -43,6 +43,7 @@ public class SC_Hold : MonoBehaviour
         if (dogInHand)
         {
             dogInHand.transform.localRotation = Quaternion.Euler(0f,0f,0f);
+            dogInHand.transform.position = transform.GetChild(0).GetChild(6).position;
         }
     }
 
