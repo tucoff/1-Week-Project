@@ -73,4 +73,17 @@ public class SC_Hold : MonoBehaviour
     {
         return holding;
     }
+
+    public void forceCancelHold()
+    {
+        transform.GetChild(0).GetChild(2).gameObject.SetActive(true);
+        transform.GetChild(0).GetChild(3).gameObject.SetActive(true);
+        transform.GetChild(0).GetChild(6).gameObject.SetActive(false);
+        dogInHand.GetComponent<Rigidbody>().isKinematic = false;
+        dogInHand.GetComponent<Rigidbody>().detectCollisions = true;
+        dogInHand.transform.parent = GameObject.Find("Dogs").transform;
+        dogInHand.transform.position -= Vector3.up*1.5f;
+        holding = false;
+        dogInHand = null;
+    }
 }

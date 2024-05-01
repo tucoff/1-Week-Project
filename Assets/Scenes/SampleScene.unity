@@ -15746,6 +15746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1712524526}
+  timeToKill: 0
 --- !u!114 &1448873998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17748,7 +17749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1f53abc6ff6243aacc27a24736610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheeps: 0
+  sheeps: 10
   dogs: 1
 --- !u!1001 &1679045207
 PrefabInstance:
@@ -21003,6 +21004,9 @@ GameObject:
   - component: {fileID: 1970837267}
   - component: {fileID: 1970837269}
   - component: {fileID: 1970837268}
+  - component: {fileID: 1970837270}
+  - component: {fileID: 1970837271}
+  - component: {fileID: 1970837272}
   m_Layer: 0
   m_Name: Akira
   m_TagString: Dog
@@ -21074,6 +21078,57 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2.526517, z: 3.2245355}
   m_Center: {x: 0, y: 2.049437, z: -0.12066674}
+--- !u!114 &1970837270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970837266}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebb5bd1359813e40a801d6a33f25a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  animator: {fileID: 1970837272}
+  speed: 0.5
+  isSleeping: 0
+--- !u!114 &1970837271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970837266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce8a81fd6f1d7449dc201e10670ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1712524526}
+  timeToKill: 1
+--- !u!95 &1970837272
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970837266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 819c18fa421b9af4d8246c0f2d53db74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1974821239
 GameObject:
   m_ObjectHideFlags: 0

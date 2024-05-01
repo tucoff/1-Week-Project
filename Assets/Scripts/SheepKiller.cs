@@ -6,6 +6,7 @@ using TMPro;
 public class SheepKiller : MonoBehaviour
 {
     public TMP_Text text;
+    public float timeToKill = 0;
 
     private void OnCollisionEnter(Collision col) {
         if (col.gameObject.tag == "Sheep")
@@ -20,7 +21,7 @@ public class SheepKiller : MonoBehaviour
             col.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             col.gameObject.tag = "Dead";
             col.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up);
-            GameObject.Destroy(col.gameObject, 5f);
+            GameObject.Destroy(col.gameObject, timeToKill);
         }
     }
 }

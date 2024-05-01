@@ -18,6 +18,7 @@ public class SheepCounter : MonoBehaviour
         {
             dogs++;
             GameObject.FindWithTag("Dogs").transform.GetChild(0).localPosition = new Vector3(-4, 9.25f, -5f);
+            GameObject.FindWithTag("Dogs").transform.GetChild(0).GetComponent<AkiraBehaviour>().enabled = true;
         }
 
         if(sheeps >= 20 && dogs == 3)
