@@ -16746,8 +16746,8 @@ GameObject:
   - component: {fileID: 1531537589}
   - component: {fileID: 1531537591}
   - component: {fileID: 1531537590}
-  - component: {fileID: 1531537592}
   - component: {fileID: 1531537593}
+  - component: {fileID: 1531537594}
   m_Layer: 0
   m_Name: Preta
   m_TagString: Dog
@@ -16819,20 +16819,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1531537592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531537588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ce8a81fd6f1d7449dc201e10670ccf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1712524526}
-  timeToKill: 5
 --- !u!95 &1531537593
 Animator:
   serializedVersion: 5
@@ -16854,6 +16840,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1531537594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531537588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ddb322ad4e9514b87fdf8a944c8722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canPee: 0
+  pee: {fileID: 2414032700086945921, guid: b51bf24f7aad58f48af2c2d76ed8a1f5, type: 3}
 --- !u!1001 &1534543266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17851,7 +17851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1f53abc6ff6243aacc27a24736610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheeps: 40
+  sheeps: 60
   dogs: 1
 --- !u!1001 &1679045207
 PrefabInstance:

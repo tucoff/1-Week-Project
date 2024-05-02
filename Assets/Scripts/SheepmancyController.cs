@@ -42,7 +42,7 @@ public class SheepmancyController : MonoBehaviour
             s.GetComponent<SheepBehaviour>().sheepSpeed = sheepSpeed;
             s.transform.position = spawnLocations[nextPos-1].position;
             nextPos = Random.Range(1,6);
-            sheepSpeed *= 1.1f;
+            sheepSpeed *= 1.02f;
             canSpawn = false;
             StartCoroutine(SpawnAnimation());  
             StartCoroutine(WaitCD());
