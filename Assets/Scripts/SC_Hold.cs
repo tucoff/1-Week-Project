@@ -48,7 +48,7 @@ public class SC_Hold : MonoBehaviour
     }
 
     private void OnTriggerStay(Collider col) {
-        if (col.tag == "Dog")
+        if (col.tag == "Dog" && col.name != "Akira" && col.name != "Preta")
         {
             float dist = Vector3.Distance(col.transform.position, transform.position);
             if (!nearestDogInRange) 

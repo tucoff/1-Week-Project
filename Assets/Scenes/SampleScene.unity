@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1645,6 +1645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad34468f56374524e86d784d6e1ede6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCounting: 0
 --- !u!1 &147121378
 GameObject:
   m_ObjectHideFlags: 0
@@ -8876,6 +8877,7 @@ GameObject:
   - component: {fileID: 808836664}
   - component: {fileID: 808836666}
   - component: {fileID: 808836665}
+  - component: {fileID: 808836667}
   m_Layer: 0
   m_Name: Sofia
   m_TagString: Dog
@@ -8897,6 +8899,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 105366554}
+  - {fileID: 1731692226}
   m_Father: {fileID: 805189083}
   m_LocalEulerAnglesHint: {x: 0, y: 180.048, z: 0}
 --- !u!54 &808836665
@@ -8947,6 +8950,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.1746088, y: 1.3991976, z: 1}
   m_Center: {x: 0.0019069314, y: 1.9946866, z: 0}
+--- !u!114 &808836667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808836663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5436206b5a0029f47ba4fc05d056bb26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowOn: 1
+  canShoot: 1
+  slowBall: {fileID: 7269582500633067513, guid: e50690c5e2194e144a8817260ca551c5, type: 3}
 --- !u!1001 &812239712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15746,7 +15764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1712524526}
-  timeToKill: 0
+  timeToKill: 5
 --- !u!114 &1448873998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17749,7 +17767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1f53abc6ff6243aacc27a24736610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheeps: 10
+  sheeps: 20
   dogs: 1
 --- !u!1001 &1679045207
 PrefabInstance:
@@ -18290,6 +18308,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: af1998b2889623f49b2b07788291450e, type: 3}
   m_PrefabInstance: {fileID: 1727195313}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1731692225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731692226}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731692226
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731692225}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 808836664}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1735100843
 GameObject:
   m_ObjectHideFlags: 0
@@ -21055,7 +21104,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!65 &1970837269
 BoxCollider:
@@ -21076,8 +21125,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.526517, z: 3.2245355}
-  m_Center: {x: 0, y: 2.049437, z: -0.12066674}
+  m_Size: {x: 1, y: 2.128581, z: 3.2245355}
+  m_Center: {x: -1.3624588e-12, y: 2.248405, z: -0.12066674}
 --- !u!114 &1970837270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21092,7 +21141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   animator: {fileID: 1970837272}
-  speed: 0.5
+  speed: 2
   isSleeping: 0
 --- !u!114 &1970837271
 MonoBehaviour:

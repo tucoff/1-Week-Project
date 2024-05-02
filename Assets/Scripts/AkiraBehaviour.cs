@@ -20,15 +20,8 @@ public class AkiraBehaviour : MonoBehaviour
         {
             target = GameObject.FindGameObjectsWithTag("Sheep")[0];
             animator.Play("AkiraJump");
-            isSleeping = false;
-
-            if(GameObject.FindWithTag("Player").GetComponent<SC_Hold>().isHolding()
-            && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand
-            && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand == this.gameObject)
-            {   
-                GameObject.FindWithTag("Player").GetComponent<SC_Hold>().forceCancelHold();
-                transform.GetComponent<SheepKiller>().enabled = true;
-            }
+            transform.GetComponent<Rigidbody>().detectCollisions = true;
+            transform.GetComponent<Rigidbody>().isKinematic = false;
         }
         yield return new WaitForSeconds(25);
         StartCoroutine("Attack");
@@ -38,14 +31,18 @@ public class AkiraBehaviour : MonoBehaviour
     {
         if(target)
         {
+            isSleeping = false;
             transform.position = Vector3.MoveTowards(transform.position, 
             target.transform.position, speed);
+            transform.LookAt(target.transform);
         }
         else if (!isSleeping)
         {
             animator.Play("AkiraSleep");
             isSleeping = true;
-            transform.GetComponent<SheepKiller>().enabled = false;
+            transform.localRotation = Quaternion.Euler(0f,0f,0f); 
+            transform.GetComponent<Rigidbody>().detectCollisions = false;
+            transform.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }

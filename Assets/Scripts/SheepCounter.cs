@@ -12,12 +12,13 @@ public class SheepCounter : MonoBehaviour
         {
             dogs++;
             GameObject.FindWithTag("Dogs").transform.GetChild(1).localPosition = new Vector3(-4, 9.25f, -5f);
+            GameObject.FindWithTag("Dogs").transform.GetChild(1).localRotation = Quaternion.Euler(0f,0f,0f);
         }
 
         if(sheeps >= 10 && dogs == 2)
         {
             dogs++;
-            GameObject.FindWithTag("Dogs").transform.GetChild(0).localPosition = new Vector3(-4, 9.25f, -5f);
+            GameObject.FindWithTag("Dogs").transform.GetChild(0).localPosition = new Vector3(-4, 8f, -5f);
             GameObject.FindWithTag("Dogs").transform.GetChild(0).GetComponent<AkiraBehaviour>().enabled = true;
         }
 
@@ -25,6 +26,7 @@ public class SheepCounter : MonoBehaviour
         {
             dogs++;
             GameObject.FindWithTag("Dogs").transform.GetChild(2).localPosition = new Vector3(-4, 9.25f, -5f);
+            GameObject.FindWithTag("Dogs").transform.GetChild(2).localRotation = Quaternion.Euler(0f,0f,0f);
         }
 
         if(sheeps >= 40 && dogs == 4)

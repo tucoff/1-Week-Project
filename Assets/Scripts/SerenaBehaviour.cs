@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SerenaBehaviour : MonoBehaviour
 {    
-    bool isCounting = false;
+    public bool isCounting = false;
 
     void Update()
     {
@@ -21,6 +21,7 @@ public class SerenaBehaviour : MonoBehaviour
         else
         {
             StopAllCoroutines();
+            isCounting = false;
         }
     }
 
