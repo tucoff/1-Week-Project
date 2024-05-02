@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SofiaBehaviour : MonoBehaviour
+public class LorenBehaviour : MonoBehaviour
 {
-    public bool slowOn = true;
     public bool canShoot = false;
-    public GameObject slowBall;
+    public GameObject killBall;
 
     private void Start() 
-    {
-        slowOn = true;   
+    { 
         canShoot = true; 
     }
 
@@ -21,21 +19,12 @@ public class SofiaBehaviour : MonoBehaviour
            && GameObject.FindWithTag("Player").GetComponent<SC_Hold>().dogInHand == this.gameObject)
         {  
             canShoot = true;
-
-            if(slowOn)
-            {
-                StartCoroutine("SlowAll"); 
-                slowOn = false;
-            }
         }
         else
         {
-            StopCoroutine("SlowAll");
-            slowOn = true;
-
             if (canShoot)
             {
-                GameObject newBall = Instantiate(slowBall, transform.GetChild(1));
+                GameObject newBall = Instantiate(killBall, transform.GetChild(1));
                 newBall.transform.parent = this.transform.parent;
                 StartCoroutine("Shoot"); 
                 canShoot = false;
@@ -44,21 +33,9 @@ public class SofiaBehaviour : MonoBehaviour
 
     }
 
-    IEnumerator SlowAll()
-    {
-        yield return new WaitForSeconds(5);
-
-        foreach(GameObject sheep in GameObject.FindGameObjectsWithTag("Sheep"))
-        {
-            sheep.GetComponent<SheepBehaviour>().StartCoroutine("slowSheep");
-        }
-        
-        slowOn = true;
-    }
-
     IEnumerator Shoot()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         canShoot = true;
     }
 }

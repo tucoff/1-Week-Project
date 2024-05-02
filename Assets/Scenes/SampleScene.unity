@@ -7486,6 +7486,7 @@ GameObject:
   - component: {fileID: 683891707}
   - component: {fileID: 683891709}
   - component: {fileID: 683891708}
+  - component: {fileID: 683891710}
   m_Layer: 0
   m_Name: Loren
   m_TagString: Dog
@@ -7507,6 +7508,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1639180157}
+  - {fileID: 1504835444}
   m_Father: {fileID: 805189083}
   m_LocalEulerAnglesHint: {x: 0, y: 180.048, z: 0}
 --- !u!65 &683891708
@@ -7557,6 +7559,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &683891710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683891706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e081eb769f2cf4fa1198c7cde2536d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canShoot: 0
+  killBall: {fileID: 7269582500633067513, guid: a78dcae694265ab41b1334aba82298e4, type: 3}
 --- !u!1 &684295127
 GameObject:
   m_ObjectHideFlags: 0
@@ -16271,6 +16287,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c206c41d543aa8b4c9203fb7585779af, type: 3}
   m_PrefabInstance: {fileID: 1491430154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1504835443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1504835444}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1504835444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504835443}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 683891707}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1506053601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16699,6 +16746,8 @@ GameObject:
   - component: {fileID: 1531537589}
   - component: {fileID: 1531537591}
   - component: {fileID: 1531537590}
+  - component: {fileID: 1531537592}
+  - component: {fileID: 1531537593}
   m_Layer: 0
   m_Name: Preta
   m_TagString: Dog
@@ -16770,6 +16819,41 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1531537592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531537588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce8a81fd6f1d7449dc201e10670ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1712524526}
+  timeToKill: 5
+--- !u!95 &1531537593
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531537588}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88fb9704889c6ce4fa1ef0d07a02a3fc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1534543266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17767,7 +17851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1f53abc6ff6243aacc27a24736610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheeps: 20
+  sheeps: 40
   dogs: 1
 --- !u!1001 &1679045207
 PrefabInstance:

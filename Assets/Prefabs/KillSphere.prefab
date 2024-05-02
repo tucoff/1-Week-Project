@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2002183096818570396}
   - component: {fileID: 4376799248622120528}
   - component: {fileID: 7006933236674282856}
-  - component: {fileID: 6352793030871904545}
   - component: {fileID: 3460945333280396610}
+  - component: {fileID: -2884088480666969212}
   m_Layer: 0
-  m_Name: SlowSphere
+  m_Name: KillSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 592a46c23e5ee914e84db3baedafa86e, type: 2}
+  - {fileID: 2100000, guid: ce5a71d0371edb5468112d566c60d687, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,18 +107,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6352793030871904545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7269582500633067513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b4cca2e78e0984caa3807694af1391, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &3460945333280396610
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -146,3 +134,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-2884088480666969212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269582500633067513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797d34e0841a09e44abea383351f0e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
