@@ -3708,6 +3708,7 @@ GameObject:
   - component: {fileID: 392195580}
   - component: {fileID: 392195582}
   - component: {fileID: 392195581}
+  - component: {fileID: 392195583}
   m_Layer: 0
   m_Name: Pequena
   m_TagString: Dog
@@ -3779,6 +3780,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &392195583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392195579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce8a81fd6f1d7449dc201e10670ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1712524526}
+  timeToKill: 5
 --- !u!1 &395550214
 GameObject:
   m_ObjectHideFlags: 0
@@ -16817,7 +16832,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &1531537593
 Animator:
@@ -16854,6 +16869,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPee: 0
   pee: {fileID: 2414032700086945921, guid: b51bf24f7aad58f48af2c2d76ed8a1f5, type: 3}
+  walkCd: 0
+  speed: 0.05
+  animator: {fileID: 1531537593}
 --- !u!1001 &1534543266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17851,7 +17869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1f53abc6ff6243aacc27a24736610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheeps: 60
+  sheeps: 0
   dogs: 1
 --- !u!1001 &1679045207
 PrefabInstance:
@@ -21961,6 +21979,8 @@ GameObject:
   - component: {fileID: 2069989072}
   - component: {fileID: 2069989074}
   - component: {fileID: 2069989073}
+  - component: {fileID: 2069989075}
+  - component: {fileID: 2069989076}
   m_Layer: 0
   m_Name: Mel
   m_TagString: Dog
@@ -22032,6 +22052,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2069989075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069989071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ce8a81fd6f1d7449dc201e10670ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1712524526}
+  timeToKill: 5
+--- !u!114 &2069989076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069989071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdda58adc9e07494fb225ae43a4954ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2072439060
 GameObject:
   m_ObjectHideFlags: 0

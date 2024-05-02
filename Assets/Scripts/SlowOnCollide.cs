@@ -27,7 +27,7 @@ public class SlowOnCollide : MonoBehaviour
             col.gameObject.GetComponent<SheepBehaviour>().StartCoroutine("slowSheep");
         }
 
-        if (col.gameObject.tag != "Floor")
+        if (col.gameObject.tag != "Floor" && col.gameObject.tag != "Pee")
         {
             Destroy(this.gameObject);
         }

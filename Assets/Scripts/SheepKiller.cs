@@ -8,6 +8,11 @@ public class SheepKiller : MonoBehaviour
     public TMP_Text text;
     public float timeToKill = 0;
 
+    private void Start() 
+    {
+        text = GameObject.FindWithTag("Canvas").transform.GetChild(1).GetComponent<TMP_Text>();    
+    }
+
     private void OnCollisionEnter(Collision col) {
         if (col.gameObject.tag == "Sheep")
         {

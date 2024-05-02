@@ -27,7 +27,7 @@ public class KillOnCollide : MonoBehaviour
             Destroy(col.gameObject);
         }
 
-        if (col.gameObject.tag != "Floor")
+        if (col.gameObject.tag != "Floor" && col.gameObject.tag != "Pee")
         {
             Destroy(this.gameObject);
         }

@@ -39,7 +39,7 @@ public class SheepCounter : MonoBehaviour
         if(sheeps >= 60 && dogs == 5)
         {
             dogs++;
-            GameObject.FindWithTag("Dogs").transform.GetChild(4).localPosition = new Vector3(-4, 9.25f, -5f);
+            GameObject.FindWithTag("Dogs").transform.GetChild(4).localPosition = new Vector3(-4, 8f, -5f);
             GameObject.FindWithTag("Dogs").transform.GetChild(4).localRotation = Quaternion.Euler(0f,0f,0f);
         }
 
