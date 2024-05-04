@@ -37,12 +37,12 @@ public class SheepmancyController : MonoBehaviour
 
         if (canSpawn)
         {
-            cd *= 0.99f; if(cd <= 0.5f){ cd = 0.5f; }
+            cd *= 0.97f; if(cd <= 2f){ cd = 2f; }
             GameObject s = Instantiate(sheep);
             s.GetComponent<SheepBehaviour>().sheepSpeed = sheepSpeed;
             s.transform.position = spawnLocations[nextPos-1].position;
             nextPos = Random.Range(1,6);
-            sheepSpeed *= 1.01f;
+            sheepSpeed *= 1.03f;
             canSpawn = false;
             StartCoroutine(SpawnAnimation());  
             StartCoroutine(WaitCD());
