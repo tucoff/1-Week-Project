@@ -30,7 +30,6 @@ public class LorenBehaviour : MonoBehaviour
                 canShoot = false;
             }
         }
-
     }
 
     IEnumerator Shoot()

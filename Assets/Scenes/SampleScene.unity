@@ -8856,8 +8856,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1970837267}
   - {fileID: 144015263}
+  - {fileID: 1970837267}
   - {fileID: 808836664}
   - {fileID: 683891707}
   - {fileID: 1531537589}
@@ -17869,7 +17869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1f53abc6ff6243aacc27a24736610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheeps: 20
+  sheeps: 0
   dogs: 1
 --- !u!1001 &1679045207
 PrefabInstance:
