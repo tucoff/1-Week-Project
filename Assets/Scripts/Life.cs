@@ -11,7 +11,7 @@ public class Life : MonoBehaviour
     private void OnTriggerEnter(Collider col) {
         if (col.tag == "Sheep")
         {
-            life -= 10;
+            life -= 10 + GameObject.FindWithTag("Controller").GetComponent<SheepCounter>().dogs*5;
             text.text = "Life: " + life;
             GameObject.Destroy(col.gameObject);
         }

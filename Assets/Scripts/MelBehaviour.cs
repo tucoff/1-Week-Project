@@ -24,7 +24,7 @@ public class MelBehaviour : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         GameObject.FindWithTag("Player").GetComponent<SC_Hold>().forceCancelHold();
-        GameObject.FindWithTag("Controller").GetComponent<Life>().life--;
+        GameObject.FindWithTag("Controller").GetComponent<Life>().life -= 10;
         isHolding = true;
     }
 }

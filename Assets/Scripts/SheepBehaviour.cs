@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SheepBehaviour : MonoBehaviour
 {
-    public float sheepSpeed = 10;
+    public float sheepSpeed = 5;
     bool slowed = false;
 
     void Update()
@@ -23,7 +23,7 @@ public class SheepBehaviour : MonoBehaviour
             slowed = true;
             float lastSpeed = sheepSpeed;
             sheepSpeed = sheepSpeed*0.1f;
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(4.5f);
             sheepSpeed = lastSpeed;
         }
         slowed = false;
